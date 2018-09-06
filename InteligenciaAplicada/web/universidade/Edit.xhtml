@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UniversidadeEditDlg" widgetVar="UniversidadeEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditUniversidadeTitle}">
+            <h:form id="UniversidadeEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{universidadeController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_idUniversidade}" for="idUniversidade" />
+                        <p:inputText id="idUniversidade" value="#{universidadeController.selected.idUniversidade}" title="#{bundle.EditUniversidadeTitle_idUniversidade}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_idUniversidade}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{universidadeController.selected.estado}" title="#{bundle.EditUniversidadeTitle_estado}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_localizacao}" for="localizacao" />
+                        <p:inputText id="localizacao" value="#{universidadeController.selected.localizacao}" title="#{bundle.EditUniversidadeTitle_localizacao}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_localizacao}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_controle}" for="controle" />
+                        <p:inputText id="controle" value="#{universidadeController.selected.controle}" title="#{bundle.EditUniversidadeTitle_controle}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_controle}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_numeroEstudantesInicial}" for="numeroEstudantesInicial" />
+                        <p:inputText id="numeroEstudantesInicial" value="#{universidadeController.selected.numeroEstudantesInicial}" title="#{bundle.EditUniversidadeTitle_numeroEstudantesInicial}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_numeroEstudantesInicial}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_numeroEstudantesFinal}" for="numeroEstudantesFinal" />
+                        <p:inputText id="numeroEstudantesFinal" value="#{universidadeController.selected.numeroEstudantesFinal}" title="#{bundle.EditUniversidadeTitle_numeroEstudantesFinal}" />
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_porcentagemMasculinos}" for="porcentagemMasculinos" />
+                        <p:inputText id="porcentagemMasculinos" value="#{universidadeController.selected.porcentagemMasculinos}" title="#{bundle.EditUniversidadeTitle_porcentagemMasculinos}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_porcentagemMasculinos}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_valorDespesasInicial}" for="valorDespesasInicial" />
+                        <p:inputText id="valorDespesasInicial" value="#{universidadeController.selected.valorDespesasInicial}" title="#{bundle.EditUniversidadeTitle_valorDespesasInicial}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_valorDespesasInicial}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_valorDespesasFinal}" for="valorDespesasFinal" />
+                        <p:inputText id="valorDespesasFinal" value="#{universidadeController.selected.valorDespesasFinal}" title="#{bundle.EditUniversidadeTitle_valorDespesasFinal}" />
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_porcentagemAjudaFinanceira}" for="porcentagemAjudaFinanceira" />
+                        <p:inputText id="porcentagemAjudaFinanceira" value="#{universidadeController.selected.porcentagemAjudaFinanceira}" title="#{bundle.EditUniversidadeTitle_porcentagemAjudaFinanceira}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_porcentagemAjudaFinanceira}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_numeroCandidatosInicial}" for="numeroCandidatosInicial" />
+                        <p:inputText id="numeroCandidatosInicial" value="#{universidadeController.selected.numeroCandidatosInicial}" title="#{bundle.EditUniversidadeTitle_numeroCandidatosInicial}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_numeroCandidatosInicial}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_numeroCandidatosFinal}" for="numeroCandidatosFinal" />
+                        <p:inputText id="numeroCandidatosFinal" value="#{universidadeController.selected.numeroCandidatosFinal}" title="#{bundle.EditUniversidadeTitle_numeroCandidatosFinal}" />
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_porcentagemAdmissao}" for="porcentagemAdmissao" />
+                        <p:inputText id="porcentagemAdmissao" value="#{universidadeController.selected.porcentagemAdmissao}" title="#{bundle.EditUniversidadeTitle_porcentagemAdmissao}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_porcentagemAdmissao}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_porcentagemMatriculados}" for="porcentagemMatriculados" />
+                        <p:inputText id="porcentagemMatriculados" value="#{universidadeController.selected.porcentagemMatriculados}" title="#{bundle.EditUniversidadeTitle_porcentagemMatriculados}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_porcentagemMatriculados}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_escalaAcademica}" for="escalaAcademica" />
+                        <p:inputText id="escalaAcademica" value="#{universidadeController.selected.escalaAcademica}" title="#{bundle.EditUniversidadeTitle_escalaAcademica}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_escalaAcademica}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_escalaSocial}" for="escalaSocial" />
+                        <p:inputText id="escalaSocial" value="#{universidadeController.selected.escalaSocial}" title="#{bundle.EditUniversidadeTitle_escalaSocial}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_escalaSocial}"/>
+                        <p:outputLabel value="#{bundle.EditUniversidadeLabel_escalaQualidadeVida}" for="escalaQualidadeVida" />
+                        <p:inputText id="escalaQualidadeVida" value="#{universidadeController.selected.escalaQualidadeVida}" title="#{bundle.EditUniversidadeTitle_escalaQualidadeVida}" required="true" requiredMessage="#{bundle.EditUniversidadeRequiredMessage_escalaQualidadeVida}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{universidadeController.update}" value="#{bundle.Save}" update="display,:UniversidadeListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UniversidadeEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UniversidadeEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

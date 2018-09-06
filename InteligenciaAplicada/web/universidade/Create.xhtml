@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UniversidadeCreateDlg" widgetVar="UniversidadeCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateUniversidadeTitle}">
+            <h:form id="UniversidadeCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{universidadeController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_idUniversidade}" for="idUniversidade" />
+                        <p:inputText id="idUniversidade" value="#{universidadeController.selected.idUniversidade}" title="#{bundle.CreateUniversidadeTitle_idUniversidade}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_idUniversidade}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{universidadeController.selected.estado}" title="#{bundle.CreateUniversidadeTitle_estado}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_localizacao}" for="localizacao" />
+                        <p:inputText id="localizacao" value="#{universidadeController.selected.localizacao}" title="#{bundle.CreateUniversidadeTitle_localizacao}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_localizacao}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_controle}" for="controle" />
+                        <p:inputText id="controle" value="#{universidadeController.selected.controle}" title="#{bundle.CreateUniversidadeTitle_controle}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_controle}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_numeroEstudantesInicial}" for="numeroEstudantesInicial" />
+                        <p:inputText id="numeroEstudantesInicial" value="#{universidadeController.selected.numeroEstudantesInicial}" title="#{bundle.CreateUniversidadeTitle_numeroEstudantesInicial}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_numeroEstudantesInicial}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_numeroEstudantesFinal}" for="numeroEstudantesFinal" />
+                        <p:inputText id="numeroEstudantesFinal" value="#{universidadeController.selected.numeroEstudantesFinal}" title="#{bundle.CreateUniversidadeTitle_numeroEstudantesFinal}" />
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_porcentagemMasculinos}" for="porcentagemMasculinos" />
+                        <p:inputText id="porcentagemMasculinos" value="#{universidadeController.selected.porcentagemMasculinos}" title="#{bundle.CreateUniversidadeTitle_porcentagemMasculinos}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_porcentagemMasculinos}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_valorDespesasInicial}" for="valorDespesasInicial" />
+                        <p:inputText id="valorDespesasInicial" value="#{universidadeController.selected.valorDespesasInicial}" title="#{bundle.CreateUniversidadeTitle_valorDespesasInicial}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_valorDespesasInicial}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_valorDespesasFinal}" for="valorDespesasFinal" />
+                        <p:inputText id="valorDespesasFinal" value="#{universidadeController.selected.valorDespesasFinal}" title="#{bundle.CreateUniversidadeTitle_valorDespesasFinal}" />
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_porcentagemAjudaFinanceira}" for="porcentagemAjudaFinanceira" />
+                        <p:inputText id="porcentagemAjudaFinanceira" value="#{universidadeController.selected.porcentagemAjudaFinanceira}" title="#{bundle.CreateUniversidadeTitle_porcentagemAjudaFinanceira}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_porcentagemAjudaFinanceira}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_numeroCandidatosInicial}" for="numeroCandidatosInicial" />
+                        <p:inputText id="numeroCandidatosInicial" value="#{universidadeController.selected.numeroCandidatosInicial}" title="#{bundle.CreateUniversidadeTitle_numeroCandidatosInicial}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_numeroCandidatosInicial}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_numeroCandidatosFinal}" for="numeroCandidatosFinal" />
+                        <p:inputText id="numeroCandidatosFinal" value="#{universidadeController.selected.numeroCandidatosFinal}" title="#{bundle.CreateUniversidadeTitle_numeroCandidatosFinal}" />
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_porcentagemAdmissao}" for="porcentagemAdmissao" />
+                        <p:inputText id="porcentagemAdmissao" value="#{universidadeController.selected.porcentagemAdmissao}" title="#{bundle.CreateUniversidadeTitle_porcentagemAdmissao}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_porcentagemAdmissao}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_porcentagemMatriculados}" for="porcentagemMatriculados" />
+                        <p:inputText id="porcentagemMatriculados" value="#{universidadeController.selected.porcentagemMatriculados}" title="#{bundle.CreateUniversidadeTitle_porcentagemMatriculados}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_porcentagemMatriculados}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_escalaAcademica}" for="escalaAcademica" />
+                        <p:inputText id="escalaAcademica" value="#{universidadeController.selected.escalaAcademica}" title="#{bundle.CreateUniversidadeTitle_escalaAcademica}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_escalaAcademica}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_escalaSocial}" for="escalaSocial" />
+                        <p:inputText id="escalaSocial" value="#{universidadeController.selected.escalaSocial}" title="#{bundle.CreateUniversidadeTitle_escalaSocial}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_escalaSocial}"/>
+                        <p:outputLabel value="#{bundle.CreateUniversidadeLabel_escalaQualidadeVida}" for="escalaQualidadeVida" />
+                        <p:inputText id="escalaQualidadeVida" value="#{universidadeController.selected.escalaQualidadeVida}" title="#{bundle.CreateUniversidadeTitle_escalaQualidadeVida}" required="true" requiredMessage="#{bundle.CreateUniversidadeRequiredMessage_escalaQualidadeVida}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{universidadeController.create}" value="#{bundle.Save}" update="display,:UniversidadeListForm:datalist,:growl" oncomplete="handleSubmit(args,'UniversidadeCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UniversidadeCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

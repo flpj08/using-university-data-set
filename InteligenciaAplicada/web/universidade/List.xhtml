@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListUniversidadeTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="UniversidadeListForm">
+                <p:panel header="#{bundle.ListUniversidadeTitle}">
+                    <p:dataTable id="datalist" value="#{universidadeController.items}" var="item"
+                                 selectionMode="single" selection="#{universidadeController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.idUniversidade}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_idUniversidade}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idUniversidade}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_estado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_localizacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.localizacao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_controle}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.controle}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_numeroEstudantesInicial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroEstudantesInicial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_numeroEstudantesFinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroEstudantesFinal}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_porcentagemMasculinos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porcentagemMasculinos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_valorDespesasInicial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorDespesasInicial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_valorDespesasFinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorDespesasFinal}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_porcentagemAjudaFinanceira}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porcentagemAjudaFinanceira}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_numeroCandidatosInicial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroCandidatosInicial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_numeroCandidatosFinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroCandidatosFinal}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_porcentagemAdmissao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porcentagemAdmissao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_porcentagemMatriculados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porcentagemMatriculados}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_escalaAcademica}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaAcademica}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_escalaSocial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaSocial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUniversidadeTitle_escalaQualidadeVida}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaQualidadeVida}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{universidadeController.prepareCreate}" update=":UniversidadeCreateForm" oncomplete="PF('UniversidadeCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":UniversidadeViewForm" oncomplete="PF('UniversidadeViewDialog').show()" disabled="#{empty universidadeController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":UniversidadeEditForm" oncomplete="PF('UniversidadeEditDialog').show()" disabled="#{empty universidadeController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{universidadeController.destroy}" update=":growl,datalist" disabled="#{empty universidadeController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UniversidadeViewDlg" widgetVar="UniversidadeViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewUniversidadeTitle}">
+            <h:form id="UniversidadeViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{universidadeController.selected != null}">
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_idUniversidade}"/>
+                        <h:outputText value="#{universidadeController.selected.idUniversidade}" title="#{bundle.ViewUniversidadeTitle_idUniversidade}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_estado}"/>
+                        <h:outputText value="#{universidadeController.selected.estado}" title="#{bundle.ViewUniversidadeTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_localizacao}"/>
+                        <h:outputText value="#{universidadeController.selected.localizacao}" title="#{bundle.ViewUniversidadeTitle_localizacao}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_controle}"/>
+                        <h:outputText value="#{universidadeController.selected.controle}" title="#{bundle.ViewUniversidadeTitle_controle}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_numeroEstudantesInicial}"/>
+                        <h:outputText value="#{universidadeController.selected.numeroEstudantesInicial}" title="#{bundle.ViewUniversidadeTitle_numeroEstudantesInicial}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_numeroEstudantesFinal}"/>
+                        <h:outputText value="#{universidadeController.selected.numeroEstudantesFinal}" title="#{bundle.ViewUniversidadeTitle_numeroEstudantesFinal}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_porcentagemMasculinos}"/>
+                        <h:outputText value="#{universidadeController.selected.porcentagemMasculinos}" title="#{bundle.ViewUniversidadeTitle_porcentagemMasculinos}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_valorDespesasInicial}"/>
+                        <h:outputText value="#{universidadeController.selected.valorDespesasInicial}" title="#{bundle.ViewUniversidadeTitle_valorDespesasInicial}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_valorDespesasFinal}"/>
+                        <h:outputText value="#{universidadeController.selected.valorDespesasFinal}" title="#{bundle.ViewUniversidadeTitle_valorDespesasFinal}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_porcentagemAjudaFinanceira}"/>
+                        <h:outputText value="#{universidadeController.selected.porcentagemAjudaFinanceira}" title="#{bundle.ViewUniversidadeTitle_porcentagemAjudaFinanceira}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_numeroCandidatosInicial}"/>
+                        <h:outputText value="#{universidadeController.selected.numeroCandidatosInicial}" title="#{bundle.ViewUniversidadeTitle_numeroCandidatosInicial}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_numeroCandidatosFinal}"/>
+                        <h:outputText value="#{universidadeController.selected.numeroCandidatosFinal}" title="#{bundle.ViewUniversidadeTitle_numeroCandidatosFinal}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_porcentagemAdmissao}"/>
+                        <h:outputText value="#{universidadeController.selected.porcentagemAdmissao}" title="#{bundle.ViewUniversidadeTitle_porcentagemAdmissao}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_porcentagemMatriculados}"/>
+                        <h:outputText value="#{universidadeController.selected.porcentagemMatriculados}" title="#{bundle.ViewUniversidadeTitle_porcentagemMatriculados}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_escalaAcademica}"/>
+                        <h:outputText value="#{universidadeController.selected.escalaAcademica}" title="#{bundle.ViewUniversidadeTitle_escalaAcademica}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_escalaSocial}"/>
+                        <h:outputText value="#{universidadeController.selected.escalaSocial}" title="#{bundle.ViewUniversidadeTitle_escalaSocial}"/>
+                        <h:outputText value="#{bundle.ViewUniversidadeLabel_escalaQualidadeVida}"/>
+                        <h:outputText value="#{universidadeController.selected.escalaQualidadeVida}" title="#{bundle.ViewUniversidadeTitle_escalaQualidadeVida}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="UniversidadeViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
